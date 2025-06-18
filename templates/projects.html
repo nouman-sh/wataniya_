@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wataniya Builders - Projects</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- <header>
+    <h1>Wataniya<span>Builders</span></h1>
+    <nav>
+      <a href="{{ url_for('home') }}" class="{% if current_page == 'home' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('appointment') }}" class="{% if current_page == 'appointment' %}active{% endif %}">Appointment</a>
+    </nav>
+    
+  </header> -->
+  <header>
+    <h1>Wataniya<span>Builders</span></h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <a href="{{ url_for('home') }}" class="{% if current_page == 'home' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('appointment') }}" class="{% if current_page == 'appointment' %}active{% endif %}">Appointment</a>
+    </nav>
+  </header>
+  
+
+  <section class="projects-section">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+      <!-- Repeat this block for each project -->
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project1.jpeg') }}" alt="Project 1">
+        <h3>SAlmia KUWAIT</h3>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project3.jpeg') }}" alt="Project 2">
+        <h3>ARbella, KUwait</h3>
+      </div>
+      <!-- Add 6 more similarly -->
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project2.jpeg') }}" alt="Project 3">
+        <h3>3D design</h3>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project9.jpeg') }}" alt="Project 4">
+        <h3>3D design</h3>
+      </div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project5.jpeg') }}" alt="Project 5">
+        <h3>3D design</h3>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project6.jpeg') }}" alt="Project 6">
+        <h3>3D design</h3>
+      </div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project7.jpeg') }}" alt="Project 7">
+        <h3>3D design</h3>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='assets/project8.jpeg') }}" alt="Project 8">
+        <h3>3D design</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+  
+      <div class="service-card">
+        <h3>1️⃣ Residential Construction</h3>
+        <ul>
+          <li>Independent Villas</li>
+          <li>Apartment Complexes</li>
+          <li>Gated Communities</li>
+          <li>Luxury Homes</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>2️⃣ Commercial Construction</h3>
+        <ul>
+          <li>Office Buildings</li>
+          <li>Shopping Complexes</li>
+          <li>Retail Spaces</li>
+          <li>Hospitality Projects (Hotels, Resorts)</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>3️⃣ Industrial Construction</h3>
+        <ul>
+          <li>Warehouses</li>
+          <li>Factories & Manufacturing Units</li>
+          <li>Logistic Parks</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>4️⃣ Structural Works</h3>
+        <ul>
+          <li>RCC Frame Structures</li>
+          <li>Steel Structures</li>
+          <li>Pre-Engineered Buildings (PEB)</li>
+          <li>Foundation Works</li>
+          <li>Earthwork & Excavation</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>5️⃣ Interior Fit-Outs</h3>
+        <ul>
+          <li>Turnkey Interiors</li>
+          <li>False Ceilings & Partition Works</li>
+          <li>Flooring Solutions</li>
+          <li>Electrical & Plumbing Works</li>
+          <li>HVAC Installation</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>6️⃣ Renovation & Remodeling</h3>
+        <ul>
+          <li>Residential Renovation</li>
+          <li>Commercial Remodeling</li>
+          <li>Facade Upgradation</li>
+          <li>Structural Reinforcement</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>7️⃣ Project Management & Consulting</h3>
+        <ul>
+          <li>End-to-End Project Execution</li>
+          <li>Budgeting & Cost Estimation</li>
+          <li>Quality Control & Assurance</li>
+          <li>Timely Delivery Management</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>8️⃣ Road & Infrastructure Development</h3>
+        <ul>
+          <li>Road Works</li>
+          <li>Drainage Systems</li>
+          <li>Water Supply Infrastructure</li>
+          <li>Utility Installations</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>9️⃣ Sustainable & Green Building Solutions</h3>
+        <ul>
+          <li>Eco-friendly Construction Materials</li>
+          <li>Energy-efficient Building Designs</li>
+          <li>Solar Integration & Rainwater Harvesting</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>🔟 Custom Design & Build Services</h3>
+        <ul>
+          <li>Client-centric designs</li>
+          <li>3D Architectural Visualization</li>
+          <li>Complete Design-to-Execution Solutions</li>
+        </ul>
+      </div>
+  
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+  </script>
+  
+  
+</body>
+
+</html>
