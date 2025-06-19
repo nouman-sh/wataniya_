@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: sufiyan-app        # ← This is just a label you’ll see on Render
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
