@@ -2,17 +2,21 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import csv
 import os
 from flask_mail import Mail, Message
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key_here"
 
-# Email configuration
+# Email configuration using environment variables
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = 'noumanshariff7411@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
 
 mail = Mail(app)
 
@@ -40,8 +44,8 @@ def appointment():
                 reader = csv.reader(file)
                 rows = list(reader)
                 if rows:
-                    last_row = rows[-1]
                     try:
+                        last_row = rows[-1]
                         next_id = int(last_row[0]) + 1
                     except:
                         next_id = len(rows) + 1
@@ -107,7 +111,6 @@ def admin():
         pass
 
     return render_template("admin.html", appointments=appointments, search=query)
-
 
 @app.route("/delete", methods=["POST"])
 def delete_appointment():
